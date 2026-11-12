@@ -1,0 +1,8 @@
+variavel_escopo,distribuicao_testada,n,parametro_1_nome,parametro_1_estimado,parametro_1_programado,parametro_2_nome,parametro_2_estimado,ks_estatistica_d,ks_p_valor,aderencia_alfa_5pct,metrica_cauda_nome,metrica_cauda_teorica_estimada,metrica_cauda_teorica_programada,metrica_cauda_empirica_observada
+tempo_deteccao_h [Geral - Mistura de Regimes],Exponencial(theta),3090,theta_hat (media h),11.316768,,desvio_padrao_h,13.157218,0.049599,0.000000,Não (Mistura/Rejeita),P(tempo > 8h),0.493163,,0.449838
+tempo_deteccao_h [Com SOC e No Expediente (theta=4h)],Exponencial(theta),606,theta_hat (media h),3.912156,4.000000,desvio_padrao_h,3.757971,0.023831,0.873094,"Sim (p >= 0,05)",P(tempo > 8h),0.129392,0.135335,0.135314
+"tempo_deteccao_h [Com SOC - Todos Horários (E[T]=4,7h)]",Exponencial(theta),907,theta_hat (media h),4.579046,4.700000,desvio_padrao_h,4.463172,0.030705,0.352387,"Sim (p >= 0,05)",P(tempo > 8h),0.174281,0.182295,0.183021
+tempo_deteccao_h [Sem SOC e No Expediente (theta=12h)],Exponencial(theta),1410,theta_hat (media h),11.767277,12.000000,desvio_padrao_h,11.501006,0.030199,0.149670,"Sim (p >= 0,05)",P(tempo > 8h),0.506692,0.513417,0.511348
+ln(perda_rs) [Geral - Todas as Perdas],Normal sobre ln(perda_rs),1424,mu_hat (media ln),10.412794,,sigma_hat (dp ln),1.124051,0.019986,0.612757,"Sim (p >= 0,05)",Z-score da Maior Perda,4.033210,,3098187.900000
+ln(perda_rs) [Tipo: Ransomware],Normal sobre ln(perda_rs),90,mu_hat (media ln),12.176973,,sigma_hat (dp ln),0.991496,0.077949,0.616630,"Sim (p >= 0,05)",Z-score da Maior Perda,2.793109,,3098187.900000
+ln(perda_rs) [Tipo: Phishing],Normal sobre ln(perda_rs),456,mu_hat (media ln),9.975779,,sigma_hat (dp ln),0.897424,0.028773,0.833880,"Sim (p >= 0,05)",Z-score da Maior Perda,3.360082,,438535.880000

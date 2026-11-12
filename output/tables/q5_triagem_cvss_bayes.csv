@@ -1,0 +1,2 @@
+prevalencia_p_mat,sensibilidade_p_alarme_dado_mat,especificidade_p_sem_alarme_dado_nao_mat,vpp_p_mat_dado_alarme_bayes,vpp_p_mat_dado_alarme_contagem,prevalencia_reduzida_metade,vpp_com_prevalencia_metade
+0.460841,0.318118,0.859544,0.659389,0.659389,0.230421,0.404100

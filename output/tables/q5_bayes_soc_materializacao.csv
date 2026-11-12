@@ -1,0 +1,19 @@
+metrica,valor,descricao
+N Total de Ataques,3090.000000,Total de ataques registrados nos 36 meses
+"Contagem (SOC=1, Materializou=1)",232.000000,Ataques em unidades com SOC que geraram perda
+"Contagem (SOC=1, Materializou=0)",675.000000,Ataques em unidades com SOC contidos sem perda
+"Contagem (SOC=0, Materializou=1)",1192.000000,Ataques em unidades sem SOC que geraram perda
+"Contagem (SOC=0, Materializou=0)",991.000000,Ataques em unidades sem SOC contidos sem perda
+P(SOC),0.293528,Probabilidade marginal do ataque ocorrer em unidade com SOC
+P(Sem SOC),0.706472,Probabilidade marginal do ataque ocorrer em unidade sem SOC
+P(Materializou),0.460841,Taxa marginal global de materialização em perda (Prevalência)
+P(Materializou | SOC),0.255788,Probabilidade condicional de materialização dado que a unidade possui SOC
+P(Materializou | Sem SOC),0.546038,Probabilidade condicional de materialização dado que a unidade NÃO possui SOC
+P(SOC ∩ Materializou),0.075081,Probabilidade conjunta observada de ter SOC e materializar
+P(SOC) * P(Materializou),0.135270,Produto das marginais sob hipótese de independência
+Diferença Independência [P(A∩B) - P(A)P(B)],-0.060189,Diferença negativa confirma dependência (SOC reduz materialização)
+P(SOC | Materializou) [Teorema de Bayes],0.162921,Probabilidade a posteriori de um ataque materializado vir de unidade com SOC
+P(SOC | Materializou) [Contagem Direta],0.162921,"Conferência direta n(SOC=1, Mat=1) / n(Mat=1)"
+Erro Absoluto Bayes vs Contagem,0.000000,Diferença numérica entre a fórmula de Bayes e a contagem na base
+Risco Relativo RR = P(Mat|SOC) / P(Mat|Sem SOC),0.468445,Razão entre as taxas de materialização com e sem SOC
+Redução Relativa de Risco pelo SOC (%),53.155546,Redução percentual na taxa de materialização associada à presença do SOC

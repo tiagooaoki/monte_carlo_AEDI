@@ -1,0 +1,7 @@
+tipo,nao_materializou_0,materializou_1,total_tipo,p_marginal_tipo,p_conjunta_tipo_e_mat,p_mat_dado_tipo,p_tipo_dado_mat
+DDoS,163,130,293,0.094822,0.042071,0.443686,0.091292
+Exploração de vulnerabilidade,177,309,486,0.157282,0.100000,0.635802,0.216994
+Força bruta,427,213,640,0.207120,0.068932,0.332813,0.149579
+Malware,219,226,445,0.144013,0.073139,0.507865,0.158708
+Phishing,620,456,1076,0.348220,0.147573,0.423792,0.320225
+Ransomware,60,90,150,0.048544,0.029126,0.600000,0.063202
