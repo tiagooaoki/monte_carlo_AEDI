@@ -1,0 +1,8 @@
+segmento,n_ataques,n_materializados,media_p_i_programada,taxa_materializacao_observada,diferenca_obs_menos_teo,ep_simulacao_sigma_sqrtn,ep_exato_bernoulli,z_score
+Geral (Todos os Ataques),3090,1424,0.462462,0.460841,-0.001621,0.008969,0.007857,-0.206314
+Tipo: Phishing,1076,456,0.413956,0.423792,0.009836,0.015072,0.013316,0.738652
+Tipo: Força bruta,640,213,0.336247,0.332813,-0.003434,0.018641,0.016656,-0.206191
+Tipo: Malware,445,226,0.546874,0.507865,-0.039009,0.023726,0.021217,-1.838563
+Tipo: Exploração de vulnerabilidade,486,309,0.618422,0.635802,0.017380,0.021850,0.020070,0.865988
+Tipo: DDoS,293,130,0.428007,0.443686,0.015679,0.029074,0.025739,0.609136
+Tipo: Ransomware,150,90,0.660509,0.600000,-0.060509,0.040134,0.036096,-1.676328

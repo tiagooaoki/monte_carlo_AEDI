@@ -72,3 +72,24 @@ def test_legacy_global_rng_is_blocked() -> None:
     disable_legacy_global_rng()
     with pytest.raises(RuntimeError, match="Proibido usar o estado global legado"):
         np.random.seed(202603)
+
+def test_ataques_contains_unit_profile_columns() -> None:
+
+    rng = get_rng(SEED)
+
+    unidades = generate_etapa_a1_unidades(rng=rng)
+
+    grade = generate_etapa_a2_contagens(
+        rng=rng,
+        df_unidades=unidades,
+    )
+
+    ataques = generate_etapas_a3_a4_ataques(
+        rng=rng,
+        df_grade=grade,
+    )
+
+    assert "soc" in ataques.columns
+    assert "treino" in ataques.columns
+    assert "patch" in ataques.columns
+    assert "servicos" in ataques.columns

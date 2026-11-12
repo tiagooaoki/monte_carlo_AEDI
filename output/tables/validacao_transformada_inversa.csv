@@ -1,0 +1,4 @@
+distribuicao,n_amostras,media_teorica,media_inversa,media_numpy,variancia_teorica,variancia_inversa,variancia_numpy,ks_1samp_stat_teorica,ks_1samp_pvalor_teorica,ks_2samp_stat_vs_numpy,ks_2samp_pvalor_vs_numpy
+Exponencial(theta=4.0),100000,4.000000,3.993708,3.995603,16.000000,15.659972,15.910336,0.003504,0.171220,0.003210,0.680222
+Exponencial(theta=12.0),100000,12.000000,12.016966,12.068838,144.000000,145.396271,147.099873,0.002233,0.700045,0.003740,0.485225
+Triangular(60.0; 80.0; 95.0),100000,78.333333,78.314912,78.324230,51.388889,51.390448,51.308954,0.002182,0.727030,0.002330,0.948310
