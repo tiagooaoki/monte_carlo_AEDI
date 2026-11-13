@@ -1,0 +1,2 @@
+filtro,variavel,hipotese_nula_h0,hipotese_alternativa_h1,mu_0_referencia_h,alpha,n,graus_liberdade,media_amostral,desvio_padrao_amostral,erro_padrao,estatistica_t,t_critico_unilateral,p_valor,rejeita_h0,decisao
+SOC == 1,tempo_deteccao_h,mu >= 6.00,mu < 6.00,6.000000,0.050000,907,906,4.579046,4.463172,0.148197,-9.588262,-1.646537,0.000000,True,"Rejeitar H0 (evidência estatística de que mu < 6,0h)"

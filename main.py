@@ -8,6 +8,9 @@ Executa o fluxo completo a partir de um único comando (`python main.py`):
        Sturges/Freedman-Diaconis (Q3), box-plots, matrizes de correlação e scatterplots (Q4),
        Teorema de Bayes e independência (Q5), e ajuste de distribuições com testes KS
        e gráficos Q-Q (Q6).
+    4. Fase 3 (Questões 7, 8, 9 e 10): Intervalos de confiança t de Student por SOC (Q7),
+       teste de hipótese unilateral para SOC = 1 (Q8), simulação empírica do Teorema
+       Central do Limite (Q9), e regressão linear simples com tabela ANOVA (Q10).
 """
 
 import sys
@@ -22,6 +25,12 @@ from src.parte_a.inverse_transform import run_inverse_transform_validation
 from src.parte_a.validator import run_parte_a_validation
 from src.parte_b.descriptive import analyze_q3_descriptive, analyze_q4_visualizations
 from src.parte_b.probability_bayes import analyze_q5_bayes, analyze_q6_distributions
+from src.parte_c.inference import (
+    analyze_q7_confidence_intervals,
+    analyze_q8_hypothesis_test,
+    analyze_q9_clt,
+    analyze_q10_linear_regression,
+)
 from src.utils.logger import get_logger
 from src.utils.rng import disable_legacy_global_rng, get_rng, validate_rng_determinism
 from src.utils.setup_project import create_project_directories
@@ -141,7 +150,54 @@ def main() -> int:
     )
     print("[OK] Questão 6 concluída: Ajustes Exponencial/Lognormal, testes KS e Q-Q plots gerados\n")
 
-    logger.info("Execução até a Fase 2 (Questões 1 a 6) finalizada com sucesso.")
+    # -------------------------------------------------------------------------
+    # FASE 3: QUESTÕES 7, 8, 9 E 10 (INFERÊNCIA, TESTE T, TCL E REGRESSÃO)
+    # -------------------------------------------------------------------------
+    df_q7 = analyze_q7_confidence_intervals(
+        df_ataques=datasets.ataques,
+        tables_dir=TABLES_DIR,
+        figures_dir=FIGURES_DIR,
+    )
+    media_soc1: float = float(df_q7.loc[df_q7["soc"] == 1, "media"].iloc[0])
+    media_soc0: float = float(df_q7.loc[df_q7["soc"] == 0, "media"].iloc[0])
+    print(
+        f"[OK] Questão 7 concluída: ICs (90%, 95%, 99%) exportados "
+        f"(Média SOC=1: {media_soc1:.3f}h | SOC=0: {media_soc0:.3f}h)"
+    )
+
+    df_q8 = analyze_q8_hypothesis_test(
+        df_ataques=datasets.ataques,
+        tables_dir=TABLES_DIR,
+    )
+    t_q8: float = float(df_q8.loc[0, "estatistica_t"])
+    p_q8: float = float(df_q8.loc[0, "p_valor"])
+    print(
+        f"[OK] Questão 8 concluída: Teste t unilateral (H0: mu >= 6h) "
+        f"(t = {t_q8:.4f}, p-valor = {p_q8:.4e})"
+    )
+
+    rng_tcl: Generator = get_rng(SEED)
+    analyze_q9_clt(
+        df_ataques=datasets.ataques,
+        tables_dir=TABLES_DIR,
+        figures_dir=FIGURES_DIR,
+        rng=rng_tcl,
+    )
+    print("[OK] Questão 9 concluída: Simulação do TCL (n = 5, 10, 30, 100) e histogramas exportados")
+
+    res_q10 = analyze_q10_linear_regression(
+        df_perdas=datasets.perdas,
+        tables_dir=TABLES_DIR,
+        figures_dir=FIGURES_DIR,
+    )
+    r2_q10: float = float(res_q10["regressao"].loc[1, "r2"])
+    f_q10: float = float(res_q10["anova"].loc[0, "F"])
+    print(
+        f"[OK] Questão 10 concluída: Regressão Linear e ANOVA exportadas "
+        f"(R² = {r2_q10:.4f}, F = {f_q10:.2f})\n"
+    )
+
+    logger.info("Execução até a Fase 3 (Questões 1 a 10) finalizada com sucesso.")
     print("Execução finalizada.")
     return 0
 

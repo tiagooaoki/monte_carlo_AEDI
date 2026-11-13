@@ -1,0 +1,3 @@
+modelo,termo,coeficiente,erro_padrao,t,p,ic95_inferior,ic95_superior,r2,r2_ajustado,correlacao_pearson_r,erro_padrao_regressao,n_observacoes
+perda_rs ~ tempo_deteccao_h,intercepto,50856.393440,5318.626949,9.561940,0.000000,40423.195871,61289.591009,0.013825,0.013131,0.117579,143511.702942,1424
+perda_rs ~ tempo_deteccao_h,tempo_deteccao_h,1041.149755,233.189951,4.464814,0.000009,583.716502,1498.583009,0.013825,0.013131,0.117579,143511.702942,1424
